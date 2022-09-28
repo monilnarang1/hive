@@ -27,11 +27,7 @@
   <property name="m2-pattern"
             value="file:${maven.local.repository}/[organisation]/[module]/[revision]/[module]-[revision](-[classifier]).[ext]"
             override="false"/>
-  <resolvers>
-    <!-- more resolvers can be added here -->
-    <chain name="downloadGrapes">
-      <!-- This resolver uses ibiblio to find artifacts, compatible with maven2 repository -->
-      <ibiblio name="central" m2compatible="true"/>
+ ral" m2compatible="true"/>
       <url name="local-maven2" m2compatible="true">
         <artifact pattern="${m2-pattern}"/>
       </url>
@@ -43,3 +39,8 @@
     </chain>
   </resolvers>
 </ivysettings>
+<resolvers>
+    <!-- more resolvers can be added here -->
+    <chain name="downloadGrapes">
+      <!-- This resolver uses ibiblio to find artifacts, compatible with maven2 repository -->
+      <ibiblio name="cent

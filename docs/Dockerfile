@@ -20,26 +20,6 @@
 FROM ubuntu:18.04
 MAINTAINER Hive team <dev@hive.apache.org>
 
-RUN ln -fs /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
-RUN apt-get update
-RUN apt-get install -y \
-  g++ \
-  gcc \
-  git \
-  libssl-dev \
-  libz-dev \
-  make \
-  ruby-dev \
-  rubygems \
-  tzdata
-RUN gem install \
-  bundler \
-  liquid \
-  listen \
-  rouge
-RUN gem install jekyll -v 3.8.6
-RUN gem install github-pages
-
 RUN useradd -ms /bin/bash hive
 COPY . /home/hive/site
 RUN chown -R hive:hive /home/hive
